@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ysk.resource.UserMapper">
+
+	<select id="getUsers" resultMap="userResult">
+		select id, name, age, address from t_user
+	</select>
+
+	<!--配置一个resultMap 指定返回的类型 -->
+	<resultMap id="userResult" type="com.ysk.api.model.User">
+		<id column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="age" property="age" />
+		<result column="address" property="address" />
+	</resultMap>
+
+</mapper>
